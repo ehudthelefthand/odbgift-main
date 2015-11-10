@@ -103,5 +103,5 @@ function onSlideChange(e, instance, index) {
 
 $(window)
   .bind("hashchange", onHashChange)
-  .trigger("hashchange")
-  .on("backstretch.before", onSlideChange);
+  .trigger("hashchange");
+  // .on("backstretch.before", onSlideChange);
