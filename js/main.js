@@ -1,0 +1,107 @@
+$(document).ready(function() {
+  $.backstretch([
+    "img/background/IMAGE1.jpg",
+    "img/background/IMAGE2.jpg",
+    "img/background/IMAGE3.jpg",
+    "img/background/IMAGE4.jpg",
+    "img/background/IMAGE5.jpg",
+    "img/background/IMAGE6.jpg",
+    "img/background/IMAGE7.jpg",
+    "img/background/IMAGE8.jpg"
+  ], { duration: 6000, fade: 3000 });
+});
+
+var
+  wisdomWords = [
+    "走在天路旅程中，越过高山经过幽谷，祂应许一路陪伴到底。",
+    "江上往来人，但爱鲈鱼美。君看一叶舟，出没风波里。",
+    "荡胸生层云，决眦入归鸟。会当凌绝顶，一览众山小。",
+    "大自然的痕迹，无所不在……",
+    "诸天述说上帝的荣耀；穹苍传扬祂的手段。这日到那日发出言语；这夜到那夜传出知识。",
+    "山重水复疑无路，柳暗花明又一村。 当山林中雾气消散，人生总能重见希望。",
+    "祢使天空绚丽，大地富足。天地万物都因祢而存在。",
+    "大山可以挪开，小山可以迁移，但有一位永恒的主宰永不更改。",
+    "万丈光芒的高山沙漠中，绿洲越显珍贵；疲乏困顿的生活中，活水就是力量。"
+  ],
+  lblWisdomWords = $(".wisdomwords"),
+  btnLinks = $("#btnLinks"),
+  btnAboutUs = $("#btnAboutUs"),
+  btnAboutUs2 = $("#btnAboutUs2"),
+  links = $(".links"),
+  about = $(".about"),
+  links_closed = true,
+  aboutus_closed = true;
+
+btnLinks.click(function(e) {
+  resetAbout();
+  $.uriAnchor.setAnchor({
+    link: links_closed ? "open" : "close"
+  });
+  links_closed = !links_closed;
+  return false;
+});
+
+btnAboutUs.click(function(e) {
+  resetLink();
+  $.uriAnchor.setAnchor({
+    aboutus: aboutus_closed ? "open" : "close"
+  });
+  aboutus_closed = !aboutus_closed;
+});
+
+btnAboutUs2.click(function(e) {
+  resetLink();
+  $.uriAnchor.setAnchor({
+    aboutus: aboutus_closed ? "open" : "close"
+  });
+  aboutus_closed = !aboutus_closed;
+});
+
+function resetLink() {
+  links.hide();
+  links_closed = true;
+}
+
+function resetAbout() {
+  about.hide();
+  aboutus_closed = true;
+}
+
+function onHashChange(e) {
+  var new_state = $.uriAnchor.makeAnchorMap();
+  if (new_state.link) {
+    resetAbout();
+    switch (new_state.link) {
+      case "open":
+        links.fadeIn(500);
+        break;
+      case "close":
+        links.fadeOut(500);
+        break;
+    }
+  }
+  else if (new_state.aboutus) {
+    resetLink();
+    switch (new_state.aboutus) {
+      case "open":
+        about.fadeIn(500);
+        break;
+      case "close":
+        about.fadeOut(500);
+        break;
+    }
+  }
+  else {
+    resetLink();
+    resetAbout();
+  }
+}
+
+function onSlideChange(e, instance, index) {
+  lblWisdomWords.text(wisdomWords[index]);
+}
+
+$(window)
+  .bind("hashchange", onHashChange)
+  .trigger("hashchange")
+  .on("backstretch.before", onSlideChange);
