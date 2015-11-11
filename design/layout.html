@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layout</title>
+    <style media="screen">
+      #logo,
+      #menu,
+      #about,
+      #link,
+      #wisdom-word,
+      #footer {
+        position: fixed;
+      }
+      #logo {
+        right: 15px;
+        bottom: 30px;
+        width: 100px;
+        height: 50px;
+        background-color: rgba(255,255,0,.5);
+      }
+      @media only screen and (orientation:landscape) {
+        #logo {
+          bottom: 10px;
+        }
+      }
+      #menu {
+        left: 15px;
+        bottom: 30px;
+        width: 150px;
+        height: 150px;
+        background-color: rgba(0,255,0,.5);
+      }
+      @media only screen and (orientation: landscape) {
+        #menu {
+          top: 50%;
+          width: 100px;
+          height: 150px;
+          transform: translateY(-50%);
+        }
+      }
+      #about {
+        left: 50%;
+        bottom: 200px;
+        width: 80%;
+        max-width: 250px;
+        height: 50%;
+        background-color: rgba(0,255,255,.5);
+        transform: translateX(-50%);
+      }
+      @media only screen and (orientation:landscape) {
+        #about {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      #link {
+        left: 50%;
+        bottom: 200px;
+        width: 200px;
+        height: 30%;
+        background-color: rgba(0,0,0,.5);
+        transform: translateX(-50%);
+      }
+      @media only screen and (orientation:landscape) {
+        #link {
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      }
+      #wisdom-word {
+        top: 50%;
+        right: 30px;
+        width: 60px;
+        height: 50%;
+        background-color: rgba(0,0,255,.5);
+        transform: translateY(-50%);
+      }
+      #footer {
+        left: 50%;
+        bottom: 10px;
+        width: 150px;
+        height: 10px;
+        background-color: rgba(255,0,0,.5);
+        transform: translateX(-50%);
+      }
+    </style>
+  </head>
+  <body>
+    <div id="logo"></div>
+    <div id="menu"></div>
+    <div id="about"></div>
+    <div id="link"></div>
+    <div id="wisdom-word"></div>
+    <div id="footer"></div>
+  </body>
+</html>
