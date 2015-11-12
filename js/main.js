@@ -7,28 +7,29 @@ $(document).ready(function() {
     "img/background/IMAGE5.jpg",
     "img/background/IMAGE6.jpg",
     "img/background/IMAGE7.jpg",
-    "img/background/IMAGE8.jpg"
+    "img/background/IMAGE8.jpg",
+    "img/background/IMAGE9.jpg"
   ], { duration: 6000, fade: 3000 });
 });
 
 var
   wisdomWords = [
-    "走在天路旅程中，越过高山经过幽谷，祂应许一路陪伴到底。",
     "江上往来人，但爱鲈鱼美。君看一叶舟，出没风波里。",
     "荡胸生层云，决眦入归鸟。会当凌绝顶，一览众山小。",
     "大自然的痕迹，无所不在……",
-    "诸天述说上帝的荣耀；穹苍传扬祂的手段。这日到那日发出言语；这夜到那夜传出知识。",
-    "山重水复疑无路，柳暗花明又一村。 当山林中雾气消散，人生总能重见希望。",
+    "诸天述说上帝的荣耀；穹苍传扬祂的手段。/这日到那日发出言语；这夜到那夜传出知识。",
+    "山重水复疑无路，柳暗花明又一村。/当山林中雾气消散，人生总能重见希望。",
     "祢使天空绚丽，大地富足。天地万物都因祢而存在。",
-    "大山可以挪开，小山可以迁移，但有一位永恒的主宰永不更改。",
-    "万丈光芒的高山沙漠中，绿洲越显珍贵；疲乏困顿的生活中，活水就是力量。"
+    "大山可以挪开，小山可以迁移，/但有一位永恒的主宰永不更改。",
+    "万丈光芒的高山沙漠中，绿洲越显珍贵；/疲乏困顿的生活中，活水就是力量。",
+    "走在天路旅程中，越过高山经过幽谷，/祂应许一路陪伴到底。"
   ],
-  lblWisdomWords = $(".wisdomwords"),
+  lblWisdomWords = $("#wisdom-word"),
   btnLinks = $("#btnLinks"),
   btnAboutUs = $("#btnAboutUs"),
   btnAboutUs2 = $("#btnAboutUs2"),
-  links = $(".links"),
-  about = $(".about"),
+  links = $("#modal-link"),
+  about = $("#about"),
   links_closed = true,
   aboutus_closed = true;
 
@@ -97,11 +98,32 @@ function onHashChange(e) {
   }
 }
 
+function elt(name, className) {
+  var element = document.createElement(name);
+  if (className) element.className = className;
+  return element;
+}
+
+function getWisdomWord(index) {
+  var wrapper = elt("div");
+  var words = wisdomWords[index].split("/");
+  for (var i = 0; i < words.length; i++) {
+    var wordElement = elt("div", "word text-shadow");
+    wordElement.innerText = words[i];
+    wrapper.appendChild(wordElement);
+  }
+  return wrapper;
+}
+
 function onSlideChange(e, instance, index) {
-  lblWisdomWords.text(wisdomWords[index]);
+  if (index === 0) {
+    console.log();
+    console.log(instance.$img);
+  }
+  lblWisdomWords.html(getWisdomWord(index));
 }
 
 $(window)
   .bind("hashchange", onHashChange)
-  .trigger("hashchange");
-  // .on("backstretch.before", onSlideChange);
+  .trigger("hashchange")
+  .on("backstretch.before", onSlideChange);

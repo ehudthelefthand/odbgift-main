@@ -7,275 +7,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>天路探索</title>
-    <meta name="description" content="">
+    <meta name="description" content="天路探索">
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <link rel="stylesheet" href="css/normalize.min.css">
     <link rel="stylesheet" href="css/font-awesome.min.css">
-    <!-- <link rel="stylesheet" href="css/main.css"> -->
-    <style media="screen">
-      *,
-      *::before,
-      *::after {
-        -webkit-box-sizing: border-box;
-           -moz-box-sizing: border-box;
-            -ms-box-sizing: border-box;
-             -o-box-sizing: border-box;
-                box-sizing: border-box;
-      }
-
-      #logo,
-      #landscape-menu,
-      #portrait-menu,
-      #modal-link,
-      #about,
-      #wisdom-word,
-      #footer {
-        position: fixed;
-      }
-      #logo {
-        right: 15px;
-        bottom: 30px;
-      }
-      #logo > img {
-        width: 100px;
-      }
-      @media only screen and (orientation:landscape) {
-        #logo {
-          bottom: 10px;
-        }
-      }
-      #landscape-menu {
-        display: none;
-        top: 50%;
-        left: 10px;
-        width: 110px;
-        height: 200px;
-        transform: translateY(-50%);
-        font-size: 12px;
-      }
-      @media only screen and (orientation:landscape) {
-        #landscape-menu {
-          display: block;
-        }
-      }
-      #landscape-menu ul {
-        list-style-type: none;
-        padding: 0;
-        margin: 0;
-      }
-      #landscape-menu .link {
-        -webkit-transition: all 0.3s ease;
-           -moz-transition: all 0.3s ease;
-            -ms-transition: all 0.3s ease;
-             -o-transition: all 0.3s ease;
-                transition: all 0.3s ease;
-      }
-      #landscape-menu .link:hover {
-        background-color: rgba(255,255,255,.5);
-      }
-      #landscape-menu a {
-        color: #fff;
-        text-decoration: none;
-      }
-      #landscape-menu ul ul {
-        position: absolute;
-        bottom: -10px;
-        right: -10px;
-        display: none;
-      }
-      #landscape-menu .link:hover > ul {
-        display: block;
-      }
-      #landscape-menu ul ul a {
-        display: block;
-        padding: 5px 0;
-
-        -webkit-transition: all 0.3s ease;
-           -moz-transition: all 0.3s ease;
-            -ms-transition: all 0.3s ease;
-             -o-transition: all 0.3s ease;
-                transition: all 0.3s ease;
-      }
-      #landscape-menu ul ul a:hover {
-        transform: scale(1.3);
-      }
-      .lm-home {
-        top: 0;
-        left: 0;
-        width: 30px;
-        height: 0;
-        padding: 15px 0;
-        line-height: 0;
-      }
-      .lm-aboutus {
-        top: 30px;
-        left: 20px;
-        width: 40px;
-        height: 0;
-        padding: 20px 0;
-        line-height: 0;
-      }
-      .lm-buy {
-        top: 75px;
-        right: 0;
-        width: 80px;
-        height: 0;
-        padding: 40px 0;
-        line-height: 0;
-      }
-      .lm-link {
-        bottom: 0;
-        left: 0;
-        width: 50px;
-        height: 0;
-        padding: 25px 0;
-        line-height: 0;
-      }
-      #portrait-menu {
-        display: block;
-        left: 15px;
-        bottom: 30px;
-        width: 140px;
-        height: 140px;
-      }
-      @media only screen and (orientation:landscape) {
-        #portrait-menu {
-          display: none;
-        }
-      }
-      .pm-home {
-        top: 0;
-        left: 0;
-        width: 52px;
-        height: 0;
-        padding: 26px 0;
-        line-height: 0;
-      }
-      .pm-aboutus {
-        top: 20px;
-        right: 20px;
-        width: 52px;
-        height: 0;
-        padding: 26px 0;
-        line-height: 0;
-      }
-      .pm-buy {
-        bottom: 0;
-        left: 0;
-        width: 80px;
-        height: 0;
-        padding: 40px 0;
-        line-height: 0;
-      }
-      .pm-link {
-        bottom: 0;
-        right: 0;
-        width: 52px;
-        height: 0;
-        padding: 26px 0;
-        line-height: 0;
-      }
-      #modal-link {
-        left: 50%;
-        bottom: 200px;
-        transform: translateX(-50%);
-      }
-      #modal-link ul {
-        display: none;
-        list-style-type: none;
-        margin: 0;
-        padding: 0;
-        background-color: rgba(0,0,0,0.3);
-      }
-      #modal-link a {
-        text-align: center;
-        display: block;
-        padding: 15px 40px;
-        text-decoration: none;
-        color: #fff;
-        font-size: 18px;
-      }
-      #modal-link a:hover {
-        background-color: rgba(255,255,255,0.5);
-      }
-      @media only screen and (orientation:landscape) {
-        #modal-link {
-          top: 50%;
-          bottom: 0;
-          transform: translate(-50%, -50%);
-        }
-      }
-      @media only screen and (orientation: landscape) {
-      }
-      #about {
-        left: 50%;
-        bottom: 180px;
-        width: 80%;
-        max-width: 250px;
-        padding: 15px;
-        transform: translateX(-50%);
-      }
-      .text-about {
-        display: none;
-        color: #fff;
-        font-size: 12px;
-        background-color: rgba(0,0,0,0.3);
-      }
-      @media only screen and (orientation:landscape) {
-        #about {
-          top: 50%;
-          bottom: 0;
-          transform: translate(-50%, -50%);
-        }
-      }
-      #wisdom-word {
-        top: 50%;
-        right: 30px;
-        width: 60px;
-        height: 50%;
-        background-color: rgba(0,0,255,.5);
-        transform: translateY(-50%);
-      }
-      #footer {
-        left: 50%;
-        bottom: 10px;
-        height: 10px;
-        transform: translateX(-50%);
-      }
-      .copyright {
-        color: #fff;
-        font-size: 9px;
-        opacity: .7;
-      }
-      .copyright > a {
-        text-decoration: none;
-        color: #fff;
-      }
-
-      /* util */
-      .link {
-        position: absolute;
-        text-align: center;
-        text-decoration: none;
-        color: #fff;
-        border-radius: 50%;
-        background-color: rgba(255,255,255,.3);
-      }
-      .text-shadow {
-        -webkit-text-shadow: 1px 1px 1px rgb(0,0,0);
-           -moz-text-shadow: 1px 1px 1px rgb(0,0,0);
-            -ms-text-shadow: 1px 1px 1px rgb(0,0,0);
-             -o-text-shadow: 1px 1px 1px rgb(0,0,0);
-                text-shadow: 1px 1px 1px rgb(0,0,0);
-      }
-      .box-shadow {
-        -webkit-box-shadow: 0px 2px 6px -3px rgb(0,0,0);
-           -moz-box-shadow: 0px 2px 6px -3px rgb(0,0,0);
-            -ms-box-shadow: 0px 2px 6px -3px rgb(0,0,0);
-             -o-box-shadow: 0px 2px 6px -3px rgb(0,0,0);
-                box-shadow: 0px 2px 6px -3px rgb(0,0,0);
-      }
-    </style>
+    <link rel="stylesheet" href="css/main.css">
   </head>
   <body>
     <!--[if lt IE 8]>
@@ -291,7 +27,7 @@
           <li><a class="link lm-home text-shadow box-shadow fa fa-home" href="/"></a></li>
           <li><div class="link lm-aboutus text-shadow box-shadow" id="btnAboutUs2">我们</div></li>
           <li><a class="link lm-buy text-shadow box-shadow" href="http://wap.koudaitong.com/v2/showcase/feature?alias=n85pxmz8">买</a></li>
-          <li><div class="link lm-link text-shadow box-shadow">更多</div>
+          <li><a href="#" class="link lm-link text-shadow box-shadow">更多</a>
             <ul>
               <li><a class="text-shadow" href="http://wap.koudaitong.com/v2/showcase/feature?alias=cfd6q12j">精品会员</a></li>
               <li><a class="text-shadow" href="http://wap.koudaitong.com/v2/showcase/feature?alias=143x8adc5">赚积分</a></li>
@@ -306,7 +42,7 @@
         <div class="link pm-aboutus text-shadow box-shadow" id="btnAboutUs">我们</div>
         <div class="link pm-link text-shadow box-shadow" id="btnLinks" >更多</div>
       </nav>
-      <div id="about" class="text-about text-shadow">
+      <div id="about" class="text-about">
         生活周遭有许多美好的事物，如日出、日落、四季更迭等，都是上天美好的创造。
         白色日记本里，有摄影师记录下的自然美景，灵动生物。
         上天有大美而不言，凝视它们，默想造物主的神奇，心被恩感，善意充盈…
@@ -324,10 +60,7 @@
           <li><a class="text-shadow"href="http://wap.koudaitong.com/v2/showcase/feature?alias=n85pxmz8">精品店铺</a></li>
         </ul>
       </div>
-      <div id="wisdom-word">
-        <div class="word"></div>
-        <div class="word"></div>
-      </div>
+      <div id="wisdom-word"></div>
       <div id="footer" class="copyright">
         © 2015 天路探索 <a href="http://www.miitbeian.gov.cn/">闽ICP备15022672号</a>
       </div>
