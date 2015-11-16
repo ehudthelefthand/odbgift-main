@@ -79,11 +79,16 @@ textarea {
   bottom: 30px;
 }
 #logo > img {
-  width: 100px;
+  width: 70px;
 }
 @media only screen and (orientation:landscape) {
   #logo {
     bottom: 10px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #logo > img {
+    width: 100px;
   }
 }
 #landscape-menu {
@@ -91,7 +96,7 @@ textarea {
   top: 50%;
   left: 10px;
   width: 110px;
-  height: 200px;
+  height: 150px;
   font-size: 12px;
   -webkit-transform: translateY(-50%);
      -moz-transform: translateY(-50%);
@@ -131,8 +136,8 @@ textarea {
 }
 #landscape-menu ul ul {
   position: absolute;
-  bottom: -10px;
-  right: -25px;
+  bottom: 0px;
+  right: -10px;
   display: none;
 }
 #landscape-menu li:hover > ul {
@@ -166,21 +171,21 @@ textarea {
   height: 0;
   padding: 20px 0;
   line-height: 0;
-  margin-left: 20px;
+  margin-left: 10px;
 }
 .lm-buy {
-  width: 80px;
+  width: 60px;
   height: 0;
-  padding: 40px 0;
-  line-height: 0;
-  margin-left: 30px;
-}
-.lm-link {
-  width: 50px;
-  height: 0;
-  padding: 25px 0;
+  padding: 30px 0;
   line-height: 0;
   margin-left: 15px;
+}
+.lm-link {
+  width: 40px;
+  height: 0;
+  padding: 20px 0;
+  line-height: 0;
+  margin-top: 5px;
 }
 #portrait-menu {
   display: block;
@@ -218,6 +223,10 @@ textarea {
   padding: 26px 0;
   line-height: 0;
 }
+#btnAboutUs1,
+#btnAboutUs2 {
+  color: #fff;
+}
 .pm-buy {
   bottom: 0;
   left: 0;
@@ -250,7 +259,8 @@ textarea {
   padding: 0;
   background-color: rgba(0,0,0,0.3);
 }
-#modal-link a {
+#modal-link a,
+#modal-link div {
   text-align: center;
   display: block;
   padding: 15px 40px;
@@ -305,8 +315,8 @@ textarea {
 }
 #wisdom-word {
   top: 50%;
-  right: 30px;
-  width: 40px;
+  right: 15px;
+  width: 80px;
   -webkit-transform: translateY(-50%);
      -moz-transform: translateY(-50%);
       -ms-transform: translateY(-50%);
@@ -314,11 +324,14 @@ textarea {
           transform: translateY(-50%);
 
 }
+#wisdom-word > div {
+  display: none;
+}
 @media only screen and (orientation:landscape) {
   #wisdom-word {
     top: 20px;
-    right: 30px;
-    width: 40px;
+    right: 15px;
+    width: 80px;
     -webkit-transform: translate(0);
        -moz-transform: translate(0);
         -ms-transform: translate(0);
@@ -330,7 +343,7 @@ textarea {
   #wisdom-word {
     top: 50%;
     right: 30px;
-    width: 40px;
+    width: 80px;
     -webkit-transform: translateY(-50%);
        -moz-transform: translateY(-50%);
         -ms-transform: translateY(-50%);
@@ -342,9 +355,9 @@ textarea {
   display: block;
   width: 10px;
   color: #fff;
-  font-size: 9px;
+  font-size: 13px;
   margin: 0 5px;
-  float: left;
+  float: right;
 }
 @media only screen and (min-width: 768px) {
   .word {
