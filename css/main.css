@@ -133,6 +133,7 @@ textarea {
 #landscape-menu a {
   color: #fff;
   text-decoration: none;
+  font-size: 14px;
 }
 #landscape-menu ul ul {
   position: absolute;
@@ -191,8 +192,8 @@ textarea {
   display: block;
   left: 15px;
   bottom: 30px;
-  width: 140px;
-  height: 140px;
+  width: 125px;
+  height: 125px;
 }
 #portrait-menu .link {
   position: absolute;
@@ -210,9 +211,9 @@ textarea {
 .pm-home {
   top: 0;
   left: 0;
-  width: 52px;
+  width: 48px;
   height: 0;
-  padding: 26px 0;
+  padding: 24px 0;
   line-height: 0;
 }
 .pm-aboutus {
@@ -230,17 +231,17 @@ textarea {
 .pm-buy {
   bottom: 0;
   left: 0;
-  width: 80px;
+  width: 70px;
   height: 0;
-  padding: 40px 0;
+  padding: 35px 0;
   line-height: 0;
 }
 .pm-link {
   bottom: 0;
   right: 0;
-  width: 52px;
+  width: 48px;
   height: 0;
-  padding: 26px 0;
+  padding: 24px 0;
   line-height: 0;
 }
 #modal-link {
@@ -257,7 +258,6 @@ textarea {
   list-style-type: none;
   margin: 0;
   padding: 0;
-  background-color: rgba(0,0,0,0.3);
 }
 #modal-link a,
 #modal-link div {
@@ -278,7 +278,7 @@ textarea {
 }
 #about {
   left: 50%;
-  bottom: 180px;
+  bottom: 170px;
   display: none;
   z-index: 10;
   width: 80%;
@@ -288,6 +288,25 @@ textarea {
       -ms-transform: translateX(-50%);
        -o-transform: translateX(-50%);
           transform: translateX(-50%);
+}
+#about > header {
+  margin-bottom: 5px;
+}
+#about .close {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  width: 23px;
+  height: 0;
+  padding: 10px 0;
+  line-height: 0;
+  font-size: 18px;
+  text-align: center;
+  text-decoration: none;
+  color: #fff;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background-color: rgba(0,0,0,0.6);
 }
 .text-about {
   padding: 15px;
