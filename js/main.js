@@ -124,3 +124,8 @@ $(window)
   .bind("hashchange", onHashChange)
   .trigger("hashchange")
   .on("backstretch.before", onSlideChange);
+
+
+
+
+  

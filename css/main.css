@@ -55,6 +55,21 @@ textarea {
    My CSS
    ========================================================================== */
 
+@font-face {
+  font-family: 'minijianxiyuan343297';
+  src: url('../fonts/minijianxiyuan.eot');
+  src: url('../fonts/minijianxiyuan.eot?#iefix') format('embedded-opentype'),
+  url('../fonts/minijianxiyuan.woff') format('woff'),
+  url('../fonts/minijianxiyuan.ttf') format('truetype'),
+  url('../fonts/minijianxiyuan.svg#minijianxiyuan') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+body {
+  font-family: "minijianxiyuan343297";
+}
+
 *,
 *::before,
 *::after {
@@ -305,14 +320,14 @@ textarea {
   color: #fff;
   border: 2px solid #fff;
   border-radius: 50%;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.4);
 }
 .text-about {
   padding: 15px;
   color: #fff;
   font-size: 11px;
   line-height: 1.6em;
-  background-color: rgba(0,0,0,0.6);
+  background-color: rgba(0,0,0,0.4);
 }
 @media only screen and (orientation:landscape) {
   #about {
