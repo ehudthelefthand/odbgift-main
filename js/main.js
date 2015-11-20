@@ -1,14 +1,14 @@
 $(document).ready(function() {
   $.backstretch([
-    // "img/background/IMAGE1.jpg",
-    // "img/background/IMAGE2.jpg",
-    // "img/background/IMAGE3.jpg",
-    // "img/background/IMAGE4.jpg",
-    // "img/background/IMAGE5.jpg",
-    // "img/background/IMAGE6.jpg",
-    "img/background/IMAGE7.jpg"
-    // "img/background/IMAGE8.jpg",
-    // "img/background/IMAGE9.jpg"
+    "img/background/IMAGE1.jpg",
+    "img/background/IMAGE2.jpg",
+    "img/background/IMAGE3.jpg",
+    "img/background/IMAGE4.jpg",
+    "img/background/IMAGE5.jpg",
+    "img/background/IMAGE6.jpg",
+    "img/background/IMAGE7.jpg",
+    "img/background/IMAGE8.jpg",
+    "img/background/IMAGE9.jpg"
   ], { duration: 8000, fade: 3000 });
 });
 
@@ -108,7 +108,7 @@ function getWisdomWord(index) {
   var wrapper = elt("div");
   var words = wisdomWords[index].split("/");
   for (var i = 0; i < words.length; i++) {
-    var wordElement = elt("div", "word text-shadow");
+    var wordElement = elt("div", "word");
     wordElement.innerText = words[i];
     wrapper.appendChild(wordElement);
   }

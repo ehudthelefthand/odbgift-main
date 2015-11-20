@@ -153,6 +153,7 @@ body {
   bottom: 30px;
   right: -70px;
   display: none;
+  padding-left: 50px;
 }
 #landscape-menu li:hover > ul {
   display: block;
@@ -375,7 +376,7 @@ body {
   #wisdom-word {
     top: 12%;
     right: 10%;
-    width: 120px;
+    width: 100px;
   }
 }
 .word {
@@ -388,8 +389,9 @@ body {
 }
 @media only screen and (min-width: 768px) {
   .word {
-    font-size: 21px;
-    margin: 0 10px;
+    width: 15px;
+    margin: 0 5px;
+    font-size: 15px;
   }
 }
 #footer {
