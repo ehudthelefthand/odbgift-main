@@ -150,8 +150,8 @@ body {
 }
 #landscape-menu ul ul {
   position: absolute;
-  bottom: 30px;
-  right: -70px;
+  bottom: 70px;
+  right: -30px;
   display: none;
   padding-left: 50px;
 }
