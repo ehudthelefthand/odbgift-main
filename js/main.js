@@ -30,20 +30,23 @@ var
   btnAboutUs2 = $("#btnAboutUs2"),
   links = $("#modal-link"),
   about = $("#about"),
+  aboutCompany = $("#about-company"),
   links_closed = true,
   aboutus_closed = true;
+  aboutcompany_closed = true;
 
 btnLinks.click(function(e) {
   resetAbout();
+  resetAboutCompany();
   $.uriAnchor.setAnchor({
     link: links_closed ? "open" : "close"
   });
   links_closed = !links_closed;
-  return false;
 });
 
 btnAboutUs.click(function(e) {
   resetLink();
+  resetAboutCompany();
   $.uriAnchor.setAnchor({
     aboutus: aboutus_closed ? "open" : "close"
   });
@@ -52,10 +55,20 @@ btnAboutUs.click(function(e) {
 
 btnAboutUs2.click(function(e) {
   resetLink();
+  resetAboutCompany();
   $.uriAnchor.setAnchor({
     aboutus: aboutus_closed ? "open" : "close"
   });
   aboutus_closed = !aboutus_closed;
+});
+
+aboutCompany.click(function(e) {
+  resetLink();
+  resetAbout();
+  $.uriAnchor.setAnchor({
+    aboutcompany: aboutcompany_closed ? "open" : "close"
+  });
+  aboutcompany_closed = !aboutcompany_closed;
 });
 
 function resetLink() {
@@ -68,10 +81,16 @@ function resetAbout() {
   aboutus_closed = true;
 }
 
+function resetAboutCompany() {
+  aboutCompany.hide();
+  aboutcompany_closed = true;
+}
+
 function onHashChange(e) {
   var new_state = $.uriAnchor.makeAnchorMap();
   if (new_state.link) {
     resetAbout();
+    resetAboutCompany();
     switch (new_state.link) {
       case "open":
         links.fadeIn(500);
@@ -83,6 +102,7 @@ function onHashChange(e) {
   }
   else if (new_state.aboutus) {
     resetLink();
+    resetAboutCompany();
     switch (new_state.aboutus) {
       case "open":
         about.fadeIn(500);
@@ -92,9 +112,20 @@ function onHashChange(e) {
         break;
     }
   }
-  else {
+  else if (new_state.aboutcompany) {
     resetLink();
     resetAbout();
+    switch (new_state.aboutcompany) {
+      case "open":
+        aboutCompany.fadeIn(500);
+        break;
+      case "close":
+        aboutCompany.fadeOut(500);
+        break;
+    }
+  }
+  else {
+    resetAll();
   }
 }
 

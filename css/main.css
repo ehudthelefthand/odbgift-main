@@ -85,6 +85,7 @@ body {
 #portrait-menu,
 #modal-link,
 #about,
+#about-company,
 #wisdom-word,
 #footer {
   position: fixed;
@@ -166,6 +167,11 @@ body {
       -ms-transition: all 0.3s ease;
        -o-transition: all 0.3s ease;
           transition: all 0.3s ease;
+}
+@media only screen and (orientation:landscape) {
+  #landscape-menu ul ul a {
+    font-size: 11px;
+  }
 }
 #landscape-menu ul ul a:hover {
   -webkit-transform: scale(1.3);
@@ -304,10 +310,12 @@ body {
        -o-transform: translateX(-50%);
           transform: translateX(-50%);
 }
-#about > header {
+#about > .header,
+#about-company > .header {
   margin-bottom: 5px;
 }
-#about .close {
+#about .close,
+#about-company .close {
   position: absolute;
   top: -10px;
   right: -10px;
@@ -324,7 +332,7 @@ body {
   background-color: rgba(0,0,0,0.4);
 }
 .text-about {
-  padding: 15px;
+  padding: 5px 15px;
   color: #fff;
   font-size: 11px;
   line-height: 1.6em;
@@ -338,6 +346,36 @@ body {
 }
 @media only screen and (min-width: 768px) {
   #about {
+    max-width: 350px;
+    bottom: 50%;
+    -webkit-transform: translate(-50%, 50%);
+       -moz-transform: translate(-50%, 50%);
+        -ms-transform: translate(-50%, 50%);
+         -o-transform: translate(-50%, 50%);
+            transform: translate(-50%, 50%);
+  }
+}
+#about-company {
+  left: 50%;
+  bottom: 142px;
+  display: none;
+  z-index: 10;
+  width: 80%;
+  max-width: 250px;
+  -webkit-transform: translateX(-50%);
+     -moz-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+       -o-transform: translateX(-50%);
+          transform: translateX(-50%);
+}
+@media only screen and (orientation:landscape) {
+  #about-company {
+    bottom: 15%;
+    max-width: 350px;
+  }
+}
+@media only screen and (min-width: 768px) {
+  #about-company {
     max-width: 350px;
     bottom: 50%;
     -webkit-transform: translate(-50%, 50%);
