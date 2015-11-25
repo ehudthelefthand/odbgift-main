@@ -71,6 +71,12 @@ aboutCompany.click(function(e) {
   aboutcompany_closed = !aboutcompany_closed;
 });
 
+function resetAll() {
+  resetLink();
+  resetAbout();
+  resetAboutCompany();
+}
+
 function resetLink() {
   links.hide();
   links_closed = true;
