@@ -402,7 +402,7 @@ body {
   #wisdom-word {
     top: 20px;
     right: 15px;
-    width: 80px;
+    width: 110px;
     -webkit-transform: translate(0);
        -moz-transform: translate(0);
         -ms-transform: translate(0);
@@ -419,12 +419,11 @@ body {
 }
 .word {
   display: block;
-  margin: 0 5px;
+  margin: 0 7px;
   float: right;
-  width: 10px;
+  width: 13px;
   color: #fff;
   font-size: 18px;
-  font-weight: bold;
 }
 @media only screen and (min-width: 768px) {
   .word {
