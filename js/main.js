@@ -145,7 +145,7 @@ function getWisdomWord(index) {
   var wrapper = elt("div");
   var words = wisdomWords[index].split("/");
   for (var i = 0; i < words.length; i++) {
-    var wordElement = elt("div", "word");
+    var wordElement = elt("div", "word text-shadow");
     wordElement.innerText = words[i];
     wrapper.appendChild(wordElement);
   }
