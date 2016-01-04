@@ -152,7 +152,7 @@ body {
 #landscape-menu ul ul {
   position: absolute;
   bottom: 70px;
-  right: -30px;
+  right: -10px;
   display: none;
   padding-left: 50px;
 }
